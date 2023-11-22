@@ -1,0 +1,85 @@
+{
+	"name": "@nanoi18n/svelte",
+	"version": "0.0.1",
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && yarn package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "yarn package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test": "vitest",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"peerDependencies": {
+		"svelte": "^4.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.1.1",
+		"@sveltejs/kit": "^1.27.6",
+		"@sveltejs/package": "^2.2.3",
+		"@typescript-eslint/eslint-plugin": "^6.12.0",
+		"@typescript-eslint/parser": "^6.12.0",
+		"eslint": "^8.54.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"prettier": "^3.1.0",
+		"prettier-plugin-svelte": "^3.1.1",
+		"publint": "^0.2.5",
+		"svelte": "^5.0.0-next.9",
+		"svelte-check": "^3.6.1",
+		"svelte-eslint-parser": "^0.33.1",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.2",
+		"vitest": "^0.34.6"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"engines": {
+		"node": "^18 || >=20"
+	},
+	"author": "Eric Vera",
+	"license": "MIT",
+	"repository": "nanoi18n/nanoi18n-svelte",
+	"keywords": [
+		"i18n",
+		"l10n",
+		"typed",
+		"internationalization",
+		"localization",
+		"svelte",
+		"sveltekit"
+	],
+	"prettier": {
+		"semi": false,
+		"useTabs": true,
+		"singleQuote": true,
+		"overrides": [
+			{
+				"files": "*.svelte",
+				"options": {
+					"parser": "svelte"
+				}
+			}
+		]
+	},
+	"packageManager": "yarn@4.0.2"
+}
