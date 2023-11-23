@@ -1,2 +1,2 @@
-// Reexport your entry components here
-export const OK = 'OK'
+export * from './T.svelte'
+export * from './index.svelte.js'
