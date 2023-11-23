@@ -319,7 +319,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nanoi18n/svelte@workspace:."
   dependencies:
-    "@sveltejs/adapter-auto": "npm:^2.1.1"
+    "@sveltejs/adapter-static": "npm:^2.0.3"
     "@sveltejs/kit": "npm:^1.27.6"
     "@sveltejs/package": "npm:^2.2.3"
     "@typescript-eslint/eslint-plugin": "npm:^6.12.0"
@@ -330,9 +330,9 @@ __metadata:
     eslint-plugin-import: "npm:^2.29.0"
     eslint-plugin-svelte: "npm:^2.35.1"
     prettier: "npm:^3.1.0"
-    prettier-plugin-svelte: "npm:^3.1.1"
+    prettier-plugin-svelte: "npm:^3.1.2"
     publint: "npm:^0.2.5"
-    svelte: "npm:^5.0.0-next.9"
+    svelte: "npm:^5.0.0-next.10"
     svelte-check: "npm:^3.6.1"
     svelte-eslint-parser: "npm:^0.33.1"
     tslib: "npm:^2.6.2"
@@ -498,14 +498,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-auto@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@sveltejs/adapter-auto@npm:2.1.1"
-  dependencies:
-    import-meta-resolve: "npm:^4.0.0"
+"@sveltejs/adapter-static@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@sveltejs/adapter-static@npm:2.0.3"
   peerDependencies:
-    "@sveltejs/kit": ^1.0.0
-  checksum: cf3bf339732c2567a1cb183914ad5c7cce19c91b3d74fee3da70b24d63eb73eb858c25f9fffe150c2ea607f28d5097c6995e298e87d7b4b9482067dc7233713f
+    "@sveltejs/kit": ^1.5.0
+  checksum: f500aa7a9c3fc3d9dfc26173aa81c30db6cff37fdc9aa92c7c2653dbdb7bf02c70081a4289d286e5ae82fe29053e61e85a2ada790bb5262cd1e78f527ee6ff5a
   languageName: node
   linkType: hard
 
@@ -1840,7 +1838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esrap@npm:^1.1.1":
+"esrap@npm:^1.2.0":
   version: 1.2.0
   resolution: "esrap@npm:1.2.0"
   dependencies:
@@ -2339,13 +2337,6 @@ __metadata:
     parent-module: "npm:^1.0.0"
     resolve-from: "npm:^4.0.0"
   checksum: 7f882953aa6b740d1f0e384d0547158bc86efbf2eea0f1483b8900a6f65c5a5123c2cf09b0d542cc419d0b98a759ecaeb394237e97ea427f2da221dc3cd80cc3
-  languageName: node
-  linkType: hard
-
-"import-meta-resolve@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "import-meta-resolve@npm:4.0.0"
-  checksum: 709375e01f8c3a87b7870991ca29c630d71bb7e22b7bb0f622613173d87b41b4043b4a983800e6d38ab3867496a46f82d30df0cbc2e55792c91c23193eea67a1
   languageName: node
   linkType: hard
 
@@ -3400,13 +3391,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-svelte@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "prettier-plugin-svelte@npm:3.1.1"
+"prettier-plugin-svelte@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "prettier-plugin-svelte@npm:3.1.2"
   peerDependencies:
     prettier: ^3.0.0
     svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
-  checksum: 629a5abe65a77f1c1b22cc02c32840810f6b515e38741546932f39a94032e0474258b8ee7ef1d6ccb5292879a32c6e6ea62499a5a15acff5170f353b5bbc5c1c
+  checksum: d0dd3f90c97a79c83d7d77e3d675d97f51190b248bac1a6cfec63add9521e69d111f59958e261b4f4b489949cbc3134cc68db440789075598dc548cfadf34fed
   languageName: node
   linkType: hard
 
@@ -4095,9 +4086,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^5.0.0-next.9":
-  version: 5.0.0-next.9
-  resolution: "svelte@npm:5.0.0-next.9"
+"svelte@npm:^5.0.0-next.10":
+  version: 5.0.0-next.10
+  resolution: "svelte@npm:5.0.0-next.10"
   dependencies:
     "@ampproject/remapping": "npm:^2.2.1"
     "@jridgewell/sourcemap-codec": "npm:^1.4.15"
@@ -4106,12 +4097,12 @@ __metadata:
     aria-query: "npm:^5.3.0"
     axobject-query: "npm:^4.0.0"
     esm-env: "npm:^1.0.0"
-    esrap: "npm:^1.1.1"
+    esrap: "npm:^1.2.0"
     is-reference: "npm:^3.0.1"
     locate-character: "npm:^3.0.0"
     magic-string: "npm:^0.30.4"
     zimmerframe: "npm:^1.1.0"
-  checksum: 466c5bc19cf78676b72ec2da38e5b0630ed0edac40b090e4cf26b1fb760f3682d0978425226abe0d8bf3730a30e41a625dc29fec6f9b706869cfe0aa5b072199
+  checksum: a1e6a448f4c530c8c1c7e576c70878e0e013f48d107a1ba53c2ee08fb38d44199e07f59b8463de36e86354498c31b0cd8d2894639a3679bfcf8e35588f81edd9
   languageName: node
   linkType: hard
 

@@ -14,15 +14,12 @@
 	"editor.detectIndentation": false,
 	"eslint.nodePath": ".yarn/sdks",
 	"editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "svelte.enable-ts-plugin": true,
-  "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
-  "svelte.language-server.runtime-args": [
-    "--loader",
-    "./.pnp.loader.mjs"
-  ]
+		"source.organizeImports": true
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"svelte.enable-ts-plugin": true,
+	"svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
+	"svelte.language-server.runtime-args": ["--loader", "./.pnp.loader.mjs"]
 }
