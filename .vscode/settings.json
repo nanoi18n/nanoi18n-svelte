@@ -3,23 +3,18 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"search.exclude": {
-		"**/.yarn": true,
 		"**/.pnp.*": true
 	},
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"todo-tree.filtering.excludeGlobs": ["**/.pnp.js", "**/.pnp.cjs", "**/*.md"],
-	"prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+	"todo-tree.filtering.excludeGlobs": ["**/*.md"],
 	"editor.insertSpaces": false,
 	"editor.comments.insertSpace": false,
 	"editor.detectIndentation": false,
-	"eslint.nodePath": ".yarn/sdks",
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true
 	},
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
-	"svelte.enable-ts-plugin": true,
-	"svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
-	"svelte.language-server.runtime-args": ["--loader", "./.pnp.loader.mjs"]
+	"svelte.enable-ts-plugin": true
 }

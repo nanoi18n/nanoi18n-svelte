@@ -5,10 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && yarn package",
+		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "yarn package",
+		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
@@ -16,7 +16,12 @@
 		"format": "prettier --write ."
 	},
 	"peerDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^5.0.0-next.10"
+	},
+	"overrides": {
+		"@sveltejs/kit": "^1.27.6",
+		"vite": "^5.0.2",
+		"svelte": "^5.0.0-next.10"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
@@ -72,6 +77,9 @@
 		"semi": false,
 		"useTabs": true,
 		"singleQuote": true,
+		"plugins": [
+			"prettier-plugin-svelte"
+		],
 		"overrides": [
 			{
 				"files": "*.svelte",
@@ -80,6 +88,5 @@
 				}
 			}
 		]
-	},
-	"packageManager": "yarn@4.0.2"
+	}
 }
