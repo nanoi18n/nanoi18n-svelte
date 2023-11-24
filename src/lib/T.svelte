@@ -1,20 +1,23 @@
 <script context="module" lang="ts">
-  interface Props<TKey, TI18N = (key: TKey) => string> {
-    t: TI18N
-    key: TKey
-  }
+	interface Props<TKey, TI18N = (key: TKey) => string> {
+		t: TI18N
+		key: TKey
+	}
 </script>
 
 <script lang="ts" generics="TKey extends string">
-  const { key, t } = $props<Props<TKey>>()
+	// TODO: Remove once this issue is fixed
+	// https://github.com/sveltejs/svelte-eslint-parser/issues/306
+	/* eslint-disable-next-line no-undef */
+	const { key, t } = $props<Props<TKey>>()
 
-  let text: string
+	let text: string
 
-  $effect.pre(() => {
-    text = t(key)
-  })
+	$effect.pre(() => {
+		text = t(key)
+	})
 </script>
 
 {#if text}
-  {text}
+	{text}
 {/if}
