@@ -6,7 +6,7 @@
 		"**/.pnp.*": true
 	},
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"todo-tree.filtering.excludeGlobs": ["**/*.md"],
+	"todo-tree.filtering.excludeGlobs": ["/node_modules"],
 	"editor.insertSpaces": false,
 	"editor.comments.insertSpace": false,
 	"editor.detectIndentation": false,
