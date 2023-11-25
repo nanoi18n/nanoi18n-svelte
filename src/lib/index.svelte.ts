@@ -2,11 +2,13 @@ import type { Importers, MessageKeys } from '@nanoi18n/nanoi18n'
 import { load } from '@nanoi18n/nanoi18n'
 import { getContext, hasContext, setContext } from 'svelte'
 
-type ContextKey = string
+export type ContextKey = string
 
-type I18NInitializerFunction<TLocale> = (locale: TLocale) => Promise<void>
-type I18NContextSetterFunction = () => void
-type I18NContextGetterFunction<
+export type I18NInitializerFunction<TLocale> = (
+	locale: TLocale,
+) => Promise<void>
+export type I18NContextSetterFunction = () => void
+export type I18NContextGetterFunction<
 	T0 extends Record<string, string>,
 	T1 extends Record<string, string> = never,
 	T2 extends Record<string, string> = never,
@@ -86,7 +88,7 @@ const createI18NContextGetter =
 		return getContext(contextKey)
 	}
 
-interface I18NContext<
+export interface I18NContext<
 	TLocale,
 	T0 extends Record<string, string>,
 	T1 extends Record<string, string> = never,
