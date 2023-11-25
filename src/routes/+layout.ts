@@ -1,5 +1,5 @@
 import type { LayoutLoad } from './$types.js'
-import { initI18N } from './messages.ts'
+import { initI18N } from './messages.js'
 
 export const prerender = true
 

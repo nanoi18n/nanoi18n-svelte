@@ -2,9 +2,9 @@
 </script>
 
 <script lang="ts">
-	import { T } from '$lib/index.ts'
+	import { T } from '$lib/index.js'
 
-	import { getI18NContext, setI18NContext } from './messages.ts'
+	import { getI18NContext, setI18NContext } from './messages.js'
 
 	setI18NContext()
 	const t = getI18NContext()

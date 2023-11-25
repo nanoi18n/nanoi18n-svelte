@@ -200,7 +200,7 @@ module.exports = {
 		'import/no-useless-path-segments': 'error',
 		'import/no-webpack-loader-syntax': 'error',
 		'import/consistent-type-specifier-style': 'error',
-		'import/extensions': ['error', 'ignorePackages'],
+		'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
 		'import/first': 'error',
 		'import/newline-after-import': 'error',
 		'import/no-duplicates': 'error',
