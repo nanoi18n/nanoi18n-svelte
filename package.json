@@ -1,6 +1,6 @@
 {
 	"name": "@nanoi18n/svelte",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"sideEffects": true,
 	"type": "module",
 	"scripts": {
@@ -54,6 +54,7 @@
 			"default": "./dist/index.js"
 		}
 	},
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
