@@ -1,6 +1,6 @@
 {
 	"name": "@nanoi18n/svelte",
-	"version": "0.0.10",
+	"version": "0.0.12",
 	"sideEffects": true,
 	"type": "module",
 	"scripts": {
@@ -50,10 +50,10 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
 		}
 	},
-	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
