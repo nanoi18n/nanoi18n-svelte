@@ -3,7 +3,7 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"search.exclude": {
-		"**/.pnp.*": true
+		"node_modules": true
 	},
 	"typescript.enablePromptUseWorkspaceTsdk": true,
 	"todo-tree.filtering.excludeGlobs": ["/node_modules"],

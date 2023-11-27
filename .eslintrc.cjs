@@ -26,7 +26,7 @@ module.exports = {
 		extraFileExtensions: ['.svelte'],
 		project: 'tsconfig.json',
 	},
-	ignorePatterns: ['.eslintrc.js', 'dist'],
+	ignorePatterns: ['.eslintrc.cjs', 'dist'],
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	overrides: [
