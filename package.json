@@ -13,7 +13,6 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
 		"lint": "prettier --check . && eslint .",
-		"eslint": "eslint .",
 		"format": "prettier --write ."
 	},
 	"peerDependencies": {
@@ -76,22 +75,6 @@
 	],
 	"publishConfig": {
 		"access": "public"
-	},
-	"prettier": {
-		"semi": false,
-		"useTabs": true,
-		"singleQuote": true,
-		"plugins": [
-			"prettier-plugin-svelte"
-		],
-		"overrides": [
-			{
-				"files": "*.svelte",
-				"options": {
-					"parser": "svelte"
-				}
-			}
-		]
 	},
 	"packageManager": "yarn@4.0.2"
 }
