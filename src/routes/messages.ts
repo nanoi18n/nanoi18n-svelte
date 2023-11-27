@@ -1,5 +1,5 @@
 import { createI18NContext } from '$lib/index.js'
-import type { Importers } from '@nanoi18n/nanoi18n'
+import type { Importers } from '@nanoi18n/core'
 import type enMessages from './messages.en.js'
 import type esMessages from './messages.es.js'
 

@@ -1,5 +1,5 @@
-import type { Importers, MessageKeys } from '@nanoi18n/nanoi18n'
-import { load } from '@nanoi18n/nanoi18n'
+import type { Importers, MessageKeys } from '@nanoi18n/core'
+import { load } from '@nanoi18n/core'
 import { getContext, hasContext, setContext } from 'svelte'
 
 export type ContextKey = string

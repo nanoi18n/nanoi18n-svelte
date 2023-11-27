@@ -315,10 +315,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nanoi18n/core@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@nanoi18n/core@npm:0.1.1"
+  checksum: 6ca03d80ef2309dd8d74585f5fbc4ad8a77e51fc9923628c33dd165ff663b3b129211b333a0f8855a516e99ac37d8a7daf571d0963f96d5e124d51edc1b596e6
+  languageName: node
+  linkType: hard
+
 "@nanoi18n/svelte@workspace:.":
   version: 0.0.0-use.local
   resolution: "@nanoi18n/svelte@workspace:."
   dependencies:
+    "@nanoi18n/core": "npm:^0.1.1"
     "@sveltejs/adapter-static": "npm:^2.0.3"
     "@sveltejs/kit": "npm:^1.27.6"
     "@sveltejs/package": "npm:^2.2.3"
@@ -340,8 +348,8 @@ __metadata:
     vite: "npm:^5.0.2"
     vitest: "npm:^0.34.6"
   peerDependencies:
-    "@nanoi18n/nanoi18n": ^0.1.1
-    svelte: ^5.0.0-next.13
+    "@nanoi18n/core": "*"
+    svelte: "*"
   languageName: unknown
   linkType: soft
 
