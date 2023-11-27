@@ -1,6 +1,6 @@
 {
 	"name": "@nanoi18n/svelte",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"sideEffects": true,
 	"type": "module",
 	"scripts": {
