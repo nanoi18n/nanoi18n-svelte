@@ -11,7 +11,7 @@
 	/* eslint-disable-next-line no-undef */
 	const { key, t } = $props<Props<TKey>>()
 
-	let text: string
+	let text: string = $state('')
 
 	$effect.pre(() => {
 		text = t(key)
