@@ -2,12 +2,12 @@
 </script>
 
 <script lang="ts">
-	import { T } from '$lib/index.js'
+	import { L } from '$lib/index.js'
 
 	import { getI18NContext, setI18NContext } from './messages.js'
 
 	setI18NContext()
-	const t = getI18NContext()
+	const l = getI18NContext()
 </script>
 
 <h1>Welcome to your library project</h1>
@@ -20,10 +20,26 @@
 </p>
 
 <div>
-	T here:
-	<T {t} key="yes-button.text" />
+	L here:
+	<L {l} key="yes-button.text" />
 </div>
 
 <div>
-	t here: {t('yes-button.unused')}
+	<L {l} key="yes-button.with-name" params={{ a: 'Human Name' }} />
+</div>
+
+<div>
+	<L
+		{l}
+		key="yes-button.with-full-name"
+		params={{ firstName: 'First', lastName: 'Lasat' }}
+	/>
+</div>
+
+<div>
+	l here: {l('yes-button.unused')}
+</div>
+
+<div>
+	l here: {l('yes-button.with-name', { personName: 'Human' })}
 </div>

@@ -32,23 +32,23 @@ const createI18NInitializer =
 	): I18NInitializerFunction<TLocale> =>
 	async (locale: TLocale): Promise<void> => {
 		if (messages[contextKey] === undefined) {
-			const t = await loadL10n(locale, importers)
-			messages[contextKey] ??= t as I18NL10nLocalFunction
+			const l = await loadL10n(locale, importers)
+			messages[contextKey] ??= l as I18NL10nLocalFunction
 		}
 	}
 
 const createI18NContextSetter =
 	(contextKey: ContextKey): I18NContextSetterFunction =>
 	(): void => {
-		const t = messages[contextKey]
+		const l = messages[contextKey]
 
-		if (t === undefined) {
+		if (l === undefined) {
 			throw new Error(
 				'I18N must be initialized before it can be set as context.',
 			)
 		}
 
-		setContext(contextKey, t)
+		setContext(contextKey, l)
 	}
 
 const createI18NContextGetter =

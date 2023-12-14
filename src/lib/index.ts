@@ -1,3 +1,3 @@
-export * from './T.svelte'
-export { default as T } from './T.svelte'
+export * from './L.svelte'
+export { default as L } from './L.svelte'
 export * from './createI18NContext.js'
