@@ -6,8 +6,11 @@
 
 	import { getI18NContext, setI18NContext } from './messages.js'
 
+	// This needs to happen on component initialization
 	setI18NContext()
-	const l = getI18NContext()
+
+	// This could happen inside components if not needed at the page level
+	const m = getI18NContext()
 </script>
 
 <h1>Welcome to your library project</h1>
@@ -21,25 +24,26 @@
 
 <div>
 	L here:
-	<L {l} key="yes-button.text" />
+	<L text={m['yes-button.text']()} />
 </div>
 
 <div>
-	<L {l} key="yes-button.with-name" params={{ a: 'Human Name' }} />
+	<L text={m['yes-button.with-name']({ personName: 'Human Name' })} />
 </div>
 
 <div>
 	<L
-		{l}
-		key="yes-button.with-full-name"
-		params={{ firstName: 'First', lastName: 'Lasat' }}
+		text={m['yes-button.with-full-name']({
+			firstName: 'First',
+			lastName: 'Last',
+		})}
 	/>
 </div>
 
 <div>
-	l here: {l('yes-button.unused')}
+	l here: {m['yes-button.unused']()}
 </div>
 
 <div>
-	l here: {l('yes-button.with-name', { personName: 'Human' })}
+	l here: {m['yes-button.with-name']({ personName: 'Human Name' })}
 </div>

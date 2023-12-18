@@ -1,9 +1,7 @@
 import type {
-	NanoI18nL10nFunction,
 	NanoI18nL10nImporters,
-	NanoI18nL10nMessages,
+	NanoI18nL10nMessageFunction,
 } from '@nanoi18n/core'
-import { loadL10n } from '@nanoi18n/core'
 import { getContext, hasContext, setContext } from 'svelte'
 
 export type ContextKey = string
@@ -15,47 +13,56 @@ export type I18NInitializerFunction<TLocale> = (
 export type I18NContextSetterFunction = () => void
 
 export type I18NContextGetterFunction<
-	TMessages extends NanoI18nL10nMessages<TMessages>,
-> = () => NanoI18nL10nFunction<TMessages>
+	TMessages extends Record<
+		keyof TMessages,
+		NanoI18nL10nMessageFunction<TMessages[keyof TMessages]>
+	>,
+> = () => NanoI18nL10nMessageFunction<TMessages>
 
-type I18NL10nLocalFunction = (
-	key: string,
-	...params: Readonly<unknown[]>
-) => string
-
-const messages: Partial<Record<ContextKey, I18NL10nLocalFunction>> = {}
+const messages: Partial<Record<ContextKey, unknown>> = {}
 
 const createI18NInitializer =
-	<TLocale extends string, TMessages extends NanoI18nL10nMessages<TMessages>>(
+	<
+		TLocale extends string,
+		TMessages extends Record<
+			keyof TMessages,
+			NanoI18nL10nMessageFunction<TMessages[keyof TMessages]>
+		>,
+	>(
 		contextKey: ContextKey,
 		importers: NanoI18nL10nImporters<TLocale, TMessages>,
 	): I18NInitializerFunction<TLocale> =>
 	async (locale: TLocale): Promise<void> => {
 		if (messages[contextKey] === undefined) {
-			const l = await loadL10n(locale, importers)
-			messages[contextKey] ??= l as I18NL10nLocalFunction
+			const m = await importers[locale]()
+			messages[contextKey] ??= m
 		}
 	}
 
 const createI18NContextSetter =
 	(contextKey: ContextKey): I18NContextSetterFunction =>
 	(): void => {
-		const l = messages[contextKey]
+		const m = messages[contextKey]
 
-		if (l === undefined) {
+		if (m === undefined) {
 			throw new Error(
 				'I18N must be initialized before it can be set as context.',
 			)
 		}
 
-		setContext(contextKey, l)
+		setContext(contextKey, m)
 	}
 
 const createI18NContextGetter =
-	<TMessages extends NanoI18nL10nMessages<TMessages>>(
+	<
+		TMessages extends Record<
+			keyof TMessages,
+			NanoI18nL10nMessageFunction<TMessages[keyof TMessages]>
+		>,
+	>(
 		contextKey: ContextKey,
-	): I18NContextGetterFunction<TMessages> =>
-	(): ReturnType<I18NContextGetterFunction<TMessages>> => {
+	) =>
+	(): TMessages => {
 		if (!hasContext(contextKey)) {
 			throw new Error(
 				'I18N must be initialized before it can be retrieved as context.',
@@ -67,16 +74,22 @@ const createI18NContextGetter =
 
 export interface I18NContext<
 	TLocale,
-	TMessages extends NanoI18nL10nMessages<TMessages>,
+	TMessages extends Record<
+		keyof TMessages,
+		NanoI18nL10nMessageFunction<TMessages[keyof TMessages]>
+	>,
 > {
 	initI18N: I18NInitializerFunction<TLocale>
 	setI18NContext: I18NContextSetterFunction
-	getI18NContext: I18NContextGetterFunction<TMessages>
+	getI18NContext: () => TMessages
 }
 
 export const createI18NContext = <
 	TLocale extends string,
-	TMessages extends NanoI18nL10nMessages<TMessages>,
+	TMessages extends Record<
+		keyof TMessages,
+		NanoI18nL10nMessageFunction<TMessages[keyof TMessages]>
+	>,
 >(
 	contextKey: ContextKey,
 	importers: NanoI18nL10nImporters<TLocale, TMessages>,

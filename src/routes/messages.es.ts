@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 const messages = {
-	'yes-button.text': '--oscuro-es--',
-	'yes-button.unused': '--sinusar-es--',
+	'yes-button.text': (): string => '--oscuro-es--',
+	'yes-button.unused': (): string => '--sinusar-es--',
 	'yes-button.with-name': ({
 		personName,
 	}: Readonly<{ personName: string }>): string => `${personName}-es`,

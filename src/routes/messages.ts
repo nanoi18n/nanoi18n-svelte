@@ -5,7 +5,6 @@ import type esMessages from './messages.es.js'
 
 const importers: NanoI18nL10nImporters<
 	'en' | 'es',
-	// TODO: Update README on core to use & instead of a single type
 	typeof enMessages & typeof esMessages
 > = {
 	['en']: async () => (await import('./messages.en.js')).default,
