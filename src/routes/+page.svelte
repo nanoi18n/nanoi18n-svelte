@@ -2,28 +2,21 @@
 </script>
 
 <script lang="ts">
-	import { T } from '$lib/index.js'
-
 	import { getI18NContext, setI18NContext } from './messages.js'
 
+	// This needs to happen on component initialization
 	setI18NContext()
-	const t = getI18NContext()
+
+	// This could happen inside components if not needed at the page level
+	const m = getI18NContext()
 </script>
 
-<h1>Welcome to your library project</h1>
-<p>
-	Create your package using @sveltejs/package and preview/showcase your work
-	with SvelteKit
-</p>
-<p>
-	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<h1>@nanoi18n/svelte test page</h1>
 
 <div>
-	T here:
-	<T {t} key="yes-button.text" />
+	message without params: {m['app.text']()}
 </div>
 
 <div>
-	t here: {t('yes-button.unused')}
+	message with param: {m['app.hi-with-full-name']({ fullName: 'Human Name' })}
 </div>
