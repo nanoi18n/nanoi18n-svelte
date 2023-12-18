@@ -1,83 +1,83 @@
 {
-	"name": "@nanoi18n/svelte",
-	"version": "0.0.18",
-	"sideEffects": true,
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && yarn package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test": "vitest --run",
-		"test:watch": "vitest",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"smoke": "yarn build && yarn lint && yarn test"
-	},
-	"peerDependencies": {
-		"@nanoi18n/core": "*",
-		"svelte": "*"
-	},
-	"devDependencies": {
-		"@nanoi18n/core": "^0.5.0",
-		"@sveltejs/adapter-static": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/package": "^2.2.3",
-		"@sveltejs/vite-plugin-svelte": "^3.0.1",
-		"@typescript-eslint/eslint-plugin": "^6.15.0",
-		"@typescript-eslint/parser": "^6.15.0",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-import-resolver-typescript": "^3.6.1",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-svelte": "^2.35.1",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"publint": "^0.2.6",
-		"svelte": "^5.0.0-next.26",
-		"svelte-check": "^3.6.2",
-		"svelte-eslint-parser": "^0.34.0-next.6",
-		"tslib": "^2.6.2",
-		"typescript": "^5.3.3",
-		"vite": "^5.0.10",
-		"vitest": "^1.0.4"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js",
-			"default": "./dist/index.js"
-		}
-	},
-	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"engines": {
-		"node": "^18 || >=20"
-	},
-	"author": "Eric Vera",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/nanoi18n/nanoi18n-svelte"
-	},
-	"keywords": [
-		"i18n",
-		"l10n",
-		"typed",
-		"internationalization",
-		"localization",
-		"svelte",
-		"sveltekit"
-	],
-	"publishConfig": {
-		"access": "public"
-	},
-	"packageManager": "yarn@4.0.2"
+  "name": "@nanoi18n/svelte",
+  "version": "0.1.0",
+  "sideEffects": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && yarn package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "smoke": "yarn build && yarn lint && yarn test"
+  },
+  "peerDependencies": {
+    "@nanoi18n/core": "*",
+    "svelte": "*"
+  },
+  "devDependencies": {
+    "@nanoi18n/core": "^0.5.0",
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/package": "^2.2.3",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-svelte": "^2.35.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "publint": "^0.2.6",
+    "svelte": "^5.0.0-next.26",
+    "svelte-check": "^3.6.2",
+    "svelte-eslint-parser": "^0.34.0-next.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.0.4"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "engines": {
+    "node": "^18 || >=20"
+  },
+  "author": "Eric Vera",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nanoi18n/nanoi18n-svelte"
+  },
+  "keywords": [
+    "i18n",
+    "l10n",
+    "typed",
+    "internationalization",
+    "localization",
+    "svelte",
+    "sveltekit"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "yarn@4.0.2"
 }
