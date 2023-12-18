@@ -2,8 +2,6 @@
 </script>
 
 <script lang="ts">
-	import { L } from '$lib/index.js'
-
 	import { getI18NContext, setI18NContext } from './messages.js'
 
 	// This needs to happen on component initialization
@@ -13,37 +11,12 @@
 	const m = getI18NContext()
 </script>
 
-<h1>Welcome to your library project</h1>
-<p>
-	Create your package using @sveltejs/package and preview/showcase your work
-	with SvelteKit
-</p>
-<p>
-	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<h1>@nanoi18n/svelte test page</h1>
 
 <div>
-	L here:
-	<L text={m['yes-button.text']()} />
+	message without params: {m['app.text']()}
 </div>
 
 <div>
-	<L text={m['yes-button.with-name']({ personName: 'Human Name' })} />
-</div>
-
-<div>
-	<L
-		text={m['yes-button.with-full-name']({
-			firstName: 'First',
-			lastName: 'Last',
-		})}
-	/>
-</div>
-
-<div>
-	l here: {m['yes-button.unused']()}
-</div>
-
-<div>
-	l here: {m['yes-button.with-name']({ personName: 'Human Name' })}
+	message with param: {m['app.hi-with-full-name']({ fullName: 'Human Name' })}
 </div>

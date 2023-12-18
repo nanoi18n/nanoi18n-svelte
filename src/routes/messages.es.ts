@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 const messages = {
-	'yes-button.text': (): string => '--oscuro-es--',
-	'yes-button.unused': (): string => '--sinusar-es--',
-	'yes-button.with-name': ({
-		personName,
-	}: Readonly<{ personName: string }>): string => `${personName}-es`,
-	'yes-button.with-full-name': ({
+	'app.text': (): string => 'Algún texto',
+	'app.unused': (): string => 'Texto sin usar',
+	'app.hi-with-full-name': ({
+		fullName,
+	}: Readonly<{ fullName: string }>): string => `¡Hola ${fullName}!`,
+	'app.hi-with-first-and-last-name': ({
 		firstName,
 		lastName,
 	}: Readonly<{ firstName: string; lastName: string }>): string =>
-		`${firstName} ${lastName}-es`,
+		`¡Hola ${firstName} ${lastName}!`,
 }
 
 export default messages
